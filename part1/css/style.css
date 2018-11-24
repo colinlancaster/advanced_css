@@ -1,0 +1,24 @@
+/*
+COLORS:
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  /* Changes box model so that paddings/borders aren't added to the height and width of an element */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  /* 1.7 times bigger than the previously defined line-height */
+  line-height: 1.7;
+  color: #777;
+}
+
