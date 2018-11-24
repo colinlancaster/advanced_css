@@ -20,5 +20,100 @@ body {
   /* 1.7 times bigger than the previously defined line-height */
   line-height: 1.7;
   color: #777;
+  /* Gives the whole page some padding */
+  padding: 30px;
 }
 
+.header {
+  height: 95vh; /* 95% of the viewport height */
+  /* Note that the below actually specifies _multiple_ background-images */
+  background-image: linear-gradient(
+    to right bottom,
+    #7ed56fb0,
+    #28b485c0),
+  url(../img/hero.jpg);
+  background-size: cover;
+  /* make sure that the top of image stays the same */
+  background-position: top;
+  /* Creates polygonal element */
+  /* Starts top left, then go clockwise*/
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /* This is important for positioning logo-box */
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  /* Width scales accordingly via the browser */
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  /* these center the whole hero box */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  animation: moveInLeft 2s ease-out;
+  /* animation-iteration-count: 3; */
+  /* animation-delay: 3s; */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+
+  animation: moveInRight 2s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
