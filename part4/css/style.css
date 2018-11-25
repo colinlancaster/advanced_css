@@ -1,0 +1,207 @@
+/*
+COLORS:
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
+
+/* CSS Reset */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /* Forces inheritence for the box-sizing prop */
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  /* 1.7 times bigger than the previously defined line-height */
+  line-height: 1.7;
+  color: #777;
+  /* Gives the whole page some padding */
+  padding: 3rem;
+  /* Changes box model so that paddings/borders aren't added to the height and width of an element */
+  box-sizing: border-box;
+}
+
+.header {
+  height: 95vh; /* 95% of the viewport height */
+  /* Note that the below actually specifies _multiple_ background-images */
+  background-image: linear-gradient(
+    to right bottom,
+    #7ed56fb0,
+    #28b485c0),
+  url(../img/hero.jpg);
+  background-size: cover;
+  /* make sure that the top of image stays the same */
+  background-position: top;
+  /* Creates polygonal element */
+  /* Starts top left, then go clockwise*/
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /* This is important for positioning logo-box */
+  position: relative;
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  /* Width scales accordingly via the browser */
+  height: 3.5rem;
+}
+
+.header__text-box {
+  position: absolute;
+  /* these center the whole hero box */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Centers button */
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+
+  animation: moveInLeft 2s ease-out;
+  /* animation-iteration-count: 3; */
+  /* animation-delay: 3s; */
+}
+
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+
+  animation: moveInRight 2s ease-out;
+}
+
+/* An example of a pseudo class */
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  /* inline-block gives the element its own space */
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+
+.btn:hover {
+  transform: translateY(-3px);
+  /* rgba determines the subtlety of the shadow */
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
+
+.btn--white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  /* The next two always has to be specified. */
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+
+.btn--white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn--animated {
+  animation: moveInBottom .5s ease-out .75s;
+  /* This stops a really horrible bouncing thing from happening */
+  animation-fill-mode: backwards;
+}
+
+
+/* @keyframes */
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
