@@ -96,7 +96,7 @@ Install Sass via NodeJS with:
 node i node-sass --save-dev
 ```
 
-### Usage of Sass
+## Usage of Sass
 
 In your `package.json` file make sure to add the following:
 
@@ -114,7 +114,7 @@ npm run compile:sass -w
 
 Use the `-w` flag to watch for changes.
 
-### Reloading Pages Automatically
+## Reloading Pages Automatically
 
 Install `live-server` with the following command:
 
