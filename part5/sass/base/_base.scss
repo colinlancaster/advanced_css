@@ -1,0 +1,20 @@
+// This page is for all your base styles, resets, etc.
+
+// Reset
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  // Forces inheritance for the box-sizing prop
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  // Changes box model so that paddings/borders aren't added
+  box-sizing: border-box;
+}

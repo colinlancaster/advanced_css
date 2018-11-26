@@ -1,0 +1,15 @@
+{
+  "name": "part4",
+  "version": "1.0.0",
+  "description": "This is the part 4 version. Landing page for Natours",
+  "main": "[",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Colin Lancaster",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.10.0"
+  },
+  "dependencies": {}
+}

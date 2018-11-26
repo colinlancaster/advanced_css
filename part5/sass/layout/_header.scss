@@ -1,0 +1,39 @@
+.header {
+  // 95% of the viewport height
+  // Note that the below actually specifies _multiple_ background-images
+  height: 95vh;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark),
+  url(../img/hero.jpg);
+  background-size: cover;
+  /* make sure that the top of image stays the same */
+  background-position: top;
+  /* Creates polygonal element */
+  /* Starts top left, then go clockwise*/
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /* This is important for positioning logo-box */
+  position: relative;
+
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    /* Width scales accordingly via the browser */
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    /* these center the whole hero box */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centers button */
+    text-align: center;
+  }
+}
