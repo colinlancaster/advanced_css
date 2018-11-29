@@ -11,11 +11,12 @@
 }
 
 html {
+  // Defines default `font-size` of 1rem
   font-size: 62.5%;
 }
 
 body {
   // Changes box model so that paddings/borders aren't added
   box-sizing: border-box;
-  background-color: darkslategrey;
+  // background-color: darkslategrey;
 }

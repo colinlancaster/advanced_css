@@ -57,3 +57,19 @@ body {
     text-shadow: .5rem 1rem 2rem rgba($color-black, .2); // x-direction y-direction blur color
   }
 }
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 2rem;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+  margin: 2rem;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
