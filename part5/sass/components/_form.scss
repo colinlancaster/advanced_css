@@ -1,0 +1,53 @@
+.form {
+  &__group {
+    margin-bottom: 2rem;
+  }
+
+  // Input elements don't inherit as much as other elements.
+  // Hence, all the 'inherits'
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 75%;
+    display: block;
+
+    &:focus {
+      outline: none; // Never just leave this set to 'none'
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    // Only works in Safari and Chrome
+    &::-webkit-input-placeholder {
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
+
+  // + is the adjacent sibling selector
+  // ~ is the general sibling selector
+  // This is the initial state of the label!
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+}
