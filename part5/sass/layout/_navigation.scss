@@ -18,13 +18,13 @@
     cursor: pointer;
 
     @include respond(tab-port) {
-      top: 4rem;
-      right: 4rem;
+      top: 3.5rem;
+      right: 3.5rem;
     }
 
     @include respond(phone) {
-      top: 3.5rem;
-      right: 3.5rem;
+      top: 3.2rem;
+      right: 3.2rem;
     }
 
   }

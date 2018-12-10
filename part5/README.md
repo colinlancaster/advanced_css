@@ -117,3 +117,9 @@ Here is the **CSS**!
 }
 
 ```
+
+## Responsive Images
+
+Resolution Switching - Decrease image res on smaller screen
+Density Switching - Half the image resolution on @1x screen
+Art Direction - Different image on a smaller screen
