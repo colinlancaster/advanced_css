@@ -118,8 +118,43 @@ Here is the **CSS**!
 
 ```
 
+Adding `only screen and` to your media queries makes sure your queries apply only to screens, not to, say, printed paper.
+
+Include the following `<meta>` tag in all your web pages:
+
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
 ## Responsive Images
 
 Resolution Switching - Decrease image res on smaller screen
 Density Switching - Half the image resolution on @1x screen
 Art Direction - Different image on a smaller screen
+
+
+## NPM Scripts
+
+The two primary `npm` commands for this system are as follows;
+
+* `npm run build:css` - this command does all the CSS task running goodness like compression, concatenation, etc.
+* `npm start` - this command starts up `live-server` and `watch:sass`.
+
+This is an amazing npm script: `prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" css/style.concat.css -o css/style.prefix.css`
+
+You need to have `autoprefixer` and `postcss` installed.
+
+The `npm-run-all` package is very easy to install and allows you to run multiple scripts either in sequence or parallel.
+
+Note the `json` below. This causes the two `npm` commands to run in _parallel_ rather than in sequence.
+
+`"start": "npm-run-all --parallel dev-server watch:css"`
+
+This is an example of `npm` commands being run in _sequence_.
+`"build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"`
+
+You can start your development workflow by running the following command: `npm run start`.
+
+Start triggers the following `npm` script: `"start": "npm-run-all --parallel dev-server watch:sass",`
+
+

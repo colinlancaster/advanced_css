@@ -12,6 +12,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
@@ -161,7 +162,10 @@
   }
 
   // MEDIA QUERY
-  @include respond(tab-port) {
+  //@include respond(tab-port)
+  @media only screen and (max-width: 56.25em),
+    // Only appear on screens _and_ on touch devices that don't have hover.
+    only screen and (hover: none) {
     // FUNCTIONALITY
     height: auto;
     border-radius: 3px;
