@@ -132,7 +132,6 @@ Resolution Switching - Decrease image res on smaller screen
 Density Switching - Half the image resolution on @1x screen
 Art Direction - Different image on a smaller screen
 
-
 ## NPM Scripts
 
 The two primary `npm` commands for this system are as follows;
